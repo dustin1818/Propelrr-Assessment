@@ -1,0 +1,750 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 100%;
+  max-width: 1244px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+header {
+  background: url("./assets/hero-container.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  margin-top: -85px;
+  padding-top: 85px;
+  min-height: 100vh;
+}
+
+.nav-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  transition:
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.nav-wrapper.scrolled {
+  background: linear-gradient(to right, #f8805f, #ff6254);
+  box-shadow: 0 2px 16px rgba(255, 98, 84, 0.3);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  position: relative;
+}
+
+.btn {
+  padding: 4px 34px;
+  line-height: 41.25px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 200px;
+  text-align: center;
+  max-width: 194px;
+  cursor: pointer;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+}
+
+.logo h1 {
+  font-size: 40px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.nav-items a {
+  font-size: 16px;
+  line-height: 41.25px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.get-app {
+  background: #ffffff;
+  color: #ff6254;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 200;
+  flex-shrink: 0;
+}
+
+.hamburger-bar {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 2px;
+  transform-origin: center;
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease,
+    width 0.35s ease;
+}
+
+.nav-toggle[aria-expanded="true"] .hamburger-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] .hamburger-bar:nth-child(2) {
+  opacity: 0;
+  width: 0;
+}
+.nav-toggle[aria-expanded="true"] .hamburger-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.main-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 80px;
+}
+
+.left-hero-upper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #ffffff;
+  margin-bottom: 36px;
+}
+
+.left-hero-upper span {
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 100%;
+}
+
+.left-hero-upper h2 {
+  font-weight: 600;
+  font-size: 48px;
+  max-width: 503px;
+  line-height: 100%;
+}
+
+.left-hero-upper p {
+  font-size: 16px;
+  line-height: 26px;
+  max-width: 482px;
+}
+
+.left-hero-lower {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #ffffff;
+}
+
+.left-hero-lower span {
+  font-family: "Nanum Pen Script", cursive;
+  line-height: 53.25px;
+  font-size: 40px;
+}
+
+.img-container {
+  display: flex;
+  gap: 10px;
+}
+
+.img-container img {
+  object-fit: contain;
+  width: 30%;
+  cursor: pointer;
+}
+
+.img-container img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.find-more {
+  margin-top: -30px;
+  padding-bottom: 30px;
+}
+
+.find-more-text-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.find-more-text-wrapper span {
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 26px;
+  color: #000000;
+}
+
+.find-more-text-wrapper img {
+  object-fit: contain;
+  margin-top: 14px;
+}
+
+.organizations-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.organization {
+  filter: grayscale(100%);
+  transition: filter 0.1s ease;
+}
+
+.organization:hover {
+  filter: grayscale(0%);
+  cursor: pointer;
+}
+
+.testimonials {
+  background-color: #fafafa;
+  padding: 50px;
+}
+
+.testimonials-text-wrapper {
+  text-align: center;
+}
+
+.testimonials-text-wrapper span {
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 26px;
+  color: #ff6254;
+}
+
+.testimonials-text-wrapper h3 {
+  font-size: 32px;
+  line-height: 26px;
+  color: #000000;
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+.testimonials-card-wrapper {
+  position: relative;
+  overflow: hidden;
+  min-height: 392px;
+  margin-top: 50px;
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  padding: 30px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 16px;
+  max-width: 380px;
+  box-shadow: 0px 4px 1px 0px rgba(242, 157, 106, 1);
+  margin-top: 60px;
+}
+
+.carousel-slide {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background-color: #757575;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+  border: none;
+}
+
+.dot.active {
+  background-color: #ff6254;
+  transform: scale(1.2);
+}
+
+.avatar-container {
+  display: flex;
+  position: absolute;
+  top: -50px;
+}
+
+.avatar1 {
+  position: relative;
+  right: -32px;
+}
+
+.testimonial-name {
+  padding-top: 30px;
+  font-size: 25px;
+  font-family: "Nanum Pen Script", cursive;
+  line-height: 26px;
+  color: #808080;
+  margin-bottom: 10px;
+}
+
+.testimonials h4 {
+  font-size: 32px;
+  font-weight: 400;
+  font-family: "Nanum Pen Script", cursive;
+  line-height: 26px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.testimonial-description {
+  margin-top: 40px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.quote {
+  font-size: 100px;
+  font-family: "Nanum Pen Script", cursive;
+  line-height: 26px;
+  font-weight: 400;
+  color: #9d6af2;
+}
+
+.dog-partner {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+  margin-bottom: -140px;
+  z-index: -1;
+  position: relative;
+}
+
+.dog-partner-text-wrapper {
+  padding-top: 50px;
+}
+
+.dog-partner-text-wrapper span {
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 40px;
+  font-weight: 400;
+  color: #ff6254;
+}
+
+.dog-partner-text-wrapper h2 {
+  font-weight: 600;
+  font-size: 48px;
+  max-width: 404px;
+  line-height: 73.25px;
+  margin-bottom: 20px;
+}
+
+.get-app2 {
+  background: #ff6254;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+footer {
+  background: url("./assets/footer-container.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  min-height: 100vh;
+  padding-top: 150px;
+}
+
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 150px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.footer-logo img {
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+}
+
+.footer-logo-text {
+  font-size: 40px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 41.25px;
+}
+
+.footer-description {
+  padding-top: 40px;
+}
+
+.footer-description p {
+  max-width: 286px;
+  margin-bottom: 40px;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.footer-socials-wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.footer-socials {
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.footer-mid-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-quick-links,
+.footer-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #ffffff;
+}
+
+.footer-quick-links h4,
+.footer-contact-info h4 {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.footer-app-download {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #ffffff;
+  max-width: 343px;
+}
+
+.footer-app-download span {
+  font-family: "Nanum Pen Script", cursive;
+  line-height: 53.25px;
+  font-size: 40px;
+}
+
+.footer-app-download .logo-img-container {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-app-download .logo-img-container img {
+  object-fit: contain;
+  width: 50%;
+  cursor: pointer;
+}
+
+.footer-app-download .logo-img-container img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.footer-copyright {
+  color: #ffffff;
+}
+
+/* media query */
+
+@media (min-width: 1025px) {
+  .testimonials-card-wrapper {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .carousel-slide {
+    justify-content: center;
+  }
+
+  .testimonial {
+    max-width: 500px;
+    width: 90%;
+    margin: 60px auto 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-items {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(80vw, 300px);
+    height: 100vh;
+    background: rgba(255, 98, 84, 0.97);
+    padding: 90px 30px 40px;
+    z-index: 100;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+  }
+
+  .nav-items.is-open {
+    transform: translateX(0);
+  }
+
+  .nav-items a {
+    width: 100%;
+    text-align: center;
+    padding: 14px 0;
+    font-size: 18px;
+    line-height: 1.5;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    transform: translateX(20px);
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .nav-items a:last-child {
+    border-bottom: none;
+  }
+
+  .nav-items.is-open a:nth-child(1) {
+    opacity: 1;
+    transform: none;
+    transition-delay: 0.08s;
+  }
+  .nav-items.is-open a:nth-child(2) {
+    opacity: 1;
+    transform: none;
+    transition-delay: 0.14s;
+  }
+  .nav-items.is-open a:nth-child(3) {
+    opacity: 1;
+    transform: none;
+    transition-delay: 0.2s;
+  }
+  .nav-items.is-open a:nth-child(4) {
+    opacity: 1;
+    transform: none;
+    transition-delay: 0.26s;
+  }
+
+  .get-app {
+    margin-top: 16px;
+    max-width: 100%;
+    width: 100%;
+    border-bottom: none !important;
+  }
+
+  .main-hero {
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 60px;
+    gap: 32px;
+  }
+
+  .left-hero-upper {
+    align-items: center;
+  }
+
+  .left-hero-upper h2 {
+    font-size: 34px;
+    max-width: 100%;
+  }
+
+  .left-hero-upper p {
+    max-width: 100%;
+  }
+
+  .left-hero-lower {
+    align-items: center;
+  }
+
+  .left-hero-lower span {
+    font-size: 34px;
+    line-height: 1.2;
+  }
+
+  .img-container {
+    justify-content: center;
+  }
+
+  .img-container img {
+    width: 35%;
+  }
+
+  .right-hero img {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .organizations-wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .dog-partner {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .dog-partner-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .dog-partner-text-wrapper h2 {
+    font-size: 34px;
+    line-height: 1.3;
+    max-width: 100%;
+  }
+
+  .dog-partner-img img {
+    max-width: 240px;
+    margin: 0 auto;
+  }
+
+  footer {
+    padding-top: 80px;
+    min-height: unset;
+  }
+
+  .footer-wrapper {
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 60px;
+  }
+
+  .footer-description {
+    padding-top: 115px;
+  }
+
+  .footer-description p {
+    max-width: 100%;
+  }
+
+  .footer-mid-info {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-app-download {
+    max-width: 100%;
+  }
+
+  .footer-app-download .logo-img-container {
+    justify-content: flex-start;
+  }
+
+  .footer-app-download .logo-img-container img {
+    width: 35%;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo h1 {
+    font-size: 28px;
+  }
+
+  .left-hero-upper span,
+  .left-hero-lower span {
+    font-size: 28px;
+  }
+
+  .left-hero-upper h2 {
+    font-size: 26px;
+  }
+
+  .img-container img {
+    width: 48%;
+  }
+
+  .dog-partner-text-wrapper h2 {
+    font-size: 26px;
+  }
+
+  .footer-logo-text {
+    font-size: 28px;
+  }
+
+  .testimonials {
+    padding: 40px 16px;
+  }
+}

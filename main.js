@@ -278,4 +278,4 @@ window.addEventListener("resize", () => {
 
 renderCards(currentPage);
 renderDots();
-// startAutoPlay();
+startAutoPlay();
